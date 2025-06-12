@@ -50,7 +50,7 @@ function Withdrawal() {
 
     function getAmount(event) {
         setAmount(event.target.value)
-        setCalFee(Math.floor(amount * 1))
+        setCalFee(Math.floor(amount * 1.3))
         console.log(amount)
 
     }
