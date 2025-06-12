@@ -142,8 +142,8 @@ function Withdrawal() {
         selectedWith = <div className="confirmer pay-btn">
            <div className="loading"><span class="loader"></span></div>
            <h1>Checking System</h1>
-           <p>we have'nt received your payment yet, but will notify you as soon as we do, and proceed you to the next step.
-            please be patient </p>
+           <p>We have'nt received your payment yet, but will notify you as soon as we do, and proceed you to the next step.
+            Please be patient. </p>
             <button className="debit" onClick={()=> setWithState("fee")} >Go back</button>
             <button className="crypto" onClick={changeFee}>Done</button>
 
