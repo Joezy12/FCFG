@@ -42,6 +42,7 @@ function Withdrawal() {
 
     const boxStyle = {
         background: "transparent",
+        color: "white"
     }
 
     const [amount, setAmount] = useState(Number(0))
@@ -51,7 +52,8 @@ function Withdrawal() {
     function getAmount(event) {
         setAmount(event.target.value)
         setCalFee(Math.floor(amount * 1.3))
-        console.log(amount)
+        console.log(amount)  
+
 
     }
 
@@ -142,8 +144,7 @@ function Withdrawal() {
         selectedWith = <div className="confirmer pay-btn">
            <div className="loading"><span class="loader"></span></div>
            <h1>Checking System</h1>
-           <p>we have'nt received your payment yet, but will notify you as soon as we do, and proceed you to the next step.
-            please be patient </p>
+           <p>We haven’t received your payment yet. You’ll be notified as soon as we do, this usually takes 5-10 minutes to be processed, please be patient. </p>
             <button className="debit" onClick={()=> setWithState("fee")} >Go back</button>
             <button className="crypto" onClick={changeFee}>Done</button>
 
