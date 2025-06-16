@@ -21,6 +21,7 @@ import { ToastContainer } from "react-toastify";
 import Profile from "./scenes/profile";
 import Admin from "./admin";
 import Transfer from "./component/transfer";
+import LinkToBank from "./component/LinkToBank";
 
 
 
@@ -48,6 +49,7 @@ function App() {
         <Route path="notification" element={<Notification />} />
         <Route path="profile" element={<Profile />} />
         <Route path="transfer" element={<Transfer />} />
+        <Route path="link" element={<LinkToBank />} />
     </Route>
     
 

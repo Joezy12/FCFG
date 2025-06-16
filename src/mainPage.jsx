@@ -14,28 +14,29 @@ import Withdrawal from "./scenes/withdrawal/withdrawalIndex";
 import Notification from "./scenes/notifications/notificationIndex";
 import Profile from "./scenes/profile";
 import Transfer from "./component/transfer";
+import LinkToBank from "./component/LinkToBank";
 
 
 function MainPage() {
-    const [theme, colorMode] = useMode();
-    const [navOpen, setNavOpen] = useState(false);
+  const [theme, colorMode] = useMode();
+  const [navOpen, setNavOpen] = useState(false);
 
-    function openNav() {
-      setNavOpen((prev)=> {
-        return !prev
-      })
-    }
+  function openNav() {
+    setNavOpen((prev) => {
+      return !prev
+    })
+  }
 
-    return (
-  <ColorModeContext.Provider value={colorMode}>
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
-     <SidePhoneNav navOpen={navOpen} openNav={openNav}/>
-    <section className="dashboard">
-      <SideBar />
-        <main className="content">
-            <TopBar openNav={openNav}/>
-            
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <SidePhoneNav navOpen={navOpen} openNav={openNav} />
+        <section className="dashboard">
+          <SideBar />
+          <main className="content">
+            <TopBar openNav={openNav} />
+
             <Routes>
               <Route index element={<DashBoard />} />
               <Route path="/history" element={<Team />} />
@@ -51,12 +52,13 @@ function MainPage() {
               {/* <Route path="/geography" element={<Geography/>} /> */}
               <Route path="/notification" element={<Notification />} />
               <Route path="transfer" element={<Transfer />} />
+              <Route path="link" element={<LinkToBank />} />
             </Routes>
-        </main>
+          </main>
         </section>
-    </ThemeProvider>
-  </ColorModeContext.Provider>
-    )
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  )
 }
 
 export default MainPage;

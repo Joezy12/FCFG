@@ -62,8 +62,12 @@ function SidePhoneNav(props) {
                     <p>Withdrawal</p>
                 </div></NavLink>
                   <NavLink to="/dash/transfer" className="linkor" style={navLinker} onClick={props.openNav}><div className="p-link">
-                    <ReceiptOutlinedIcon className="phoneI" />
+                    <i className="bi-arrow-left-right"></i>
                     <p>Transfer to FCFG</p>
+                </div></NavLink>
+                  <NavLink to="/dash/link" className="linkor" style={navLinker} onClick={props.openNav}><div className="p-link">
+                    <i className="bi-link"></i>
+                    <p>Link to Bank</p>
                 </div></NavLink>
                 <NavLink to="/dash/profile" className="linkor" style={navLinker} onClick={props.openNav}><div className="p-link">
                     <PersonOutlinedIcon className="phoneI" />
