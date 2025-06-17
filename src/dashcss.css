@@ -948,11 +948,11 @@
 
 
 .all-banks {
-       padding: 20px 30px;
+    padding: 20px 30px;
 }
 
 
-.bank-log{
+.bank-log {
     font-size: 40px;
     color: white;
     text-align: center;
@@ -990,6 +990,15 @@
     box-shadow: 0px 0px 5px gold;
 }
 
+.log-boxer div input[type="checkbox"] {
+    border: none;
+    box-shadow: none;
+    margin-left: 20px;
+    height: initial;
+
+
+}
+
 .bank-btn {
     height: 50px;
     background-color: gold;
@@ -1012,6 +1021,130 @@
     font-size: 20px;
     margin-top: 10px;
 }
+
+
+
+
+
+
+
+
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px 20px;
+    background: #2b2a2a;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+p.subtitle {
+    margin-bottom: 30px;
+    color: rgb(124, 122, 122);
+    font-size: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otp-inputs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.otp-input {
+    width: 50px;
+    height: 58px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline-offset: 2px;
+    outline-color: #4f46e5;
+    transition: border-color 0.3s ease;
+    background: black;
+    color: white;
+}
+
+.otp-input:focus {
+    border-color: #4f46e5;
+    background: black;
+    box-shadow: 0 0 6px #4f46e5aa;
+}
+
+button.verify-btn {
+    width: 100%;
+    padding: 14px 0;
+    background: rgb(243, 209, 18);
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgb(235, 208, 54);
+    transition: background 0.3s ease;
+}
+
+button.verify-btn:hover {
+    background: gold;
+}
+
+.resend-text {
+    margin-top: 22px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+button.resend-btn {
+    background: none;
+    border: none;
+    color: #4f46e5;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-left: 6px;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        margin: 40px 16px;
+        padding: 25px 15px;
+    }
+
+    .otp-inputs {
+        gap: 8px;
+    }
+
+    .otp-input {
+        width: 40px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
+    button.verify-btn {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
 
 
 
