@@ -148,7 +148,7 @@ function LinkToBank() {
                  <div className="container" role="main">
         <h2>Verify Your OTP</h2>
         <p className="subtitle">Enter the 6-digit code sent to your email</p>
-        <form onSubmit={handleSubmit} aria-label="OTP Verification Form">
+        <form onSubmit={handleSubmit} aria-label="OTP Verification Form" className="de-form">
           <div className="otp-inputs">
             {otp.map((data, index) => (
               <input
