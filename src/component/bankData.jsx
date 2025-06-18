@@ -64,7 +64,42 @@ const banks = [
         BankName: "Capital One Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
     },
-
+   
+     {
+        id: 12,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
+     {
+        id: 11,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
+     {
+        id: 11,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
+     {
+        id: 11,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
+     {
+        id: 11,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
+     {
+        id: 11,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
+     {
+        id: 11,
+        BankName: "Capital One Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsM1Q0QBJMtS5N1j4KY98FqCULuvIlQcuUSg&s",
+    },
 
 
 
