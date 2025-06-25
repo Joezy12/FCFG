@@ -92,7 +92,7 @@ function SignUp(prop) {
     const handleRegister = async (e) => {
         e.preventDefault();
         setShowLoad(true)
-        if (signInfo.Fname && signInfo.Lname && signInfo.cPassword && signInfo.email && signInfo.password && signInfo.ssn && day && year && month) {
+        if (signInfo.Fname && signInfo.Lname && signInfo.cPassword && signInfo.email && signInfo.password  && day && year && month) {
             if (signInfo.password == signInfo.cPassword) {
                 try {
                     await createUserWithEmailAndPassword(auth, signInfo.email, signInfo.password);
@@ -113,6 +113,13 @@ function SignUp(prop) {
                             dateOfBirth: day + "/" + month + "/" + year,
                             phone: signInfo.phone,
                             cryptoAddress: "",
+                            history: [
+                                {
+                                    type: "",
+                                    name: "",
+                                    amount:"",
+                                }
+                            ],
                         })
                     }
                     toast.success("registered successfully", { position: 'top-center' })
@@ -169,10 +176,10 @@ function SignUp(prop) {
                         </div>
                     </div>
 
-                    <div className="sign-input">
+                    {/* <div className="sign-input">
                         <p>Social security Number (SSN)</p>
                         <input type="number" name="ssn" onChange={gatherFunc} />
-                    </div>
+                    </div> */}
 
 
 

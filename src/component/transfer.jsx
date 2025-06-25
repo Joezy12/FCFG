@@ -7,25 +7,25 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 function Transfer() {
-  
+
   const navigate = useNavigate();
 
-    const [userDetails, setUserDetails] = useState(null)
-    const fetchUserData = async (e) => {
-        auth.onAuthStateChanged(async (user) => {
-            console.log(user);
-            const docRef = doc(db, "users", user.uid);
-            const docSnap = await getDoc(docRef);
-            if (docSnap.exists()) {
-                setUserDetails(docSnap.data())
-                console.log(docSnap.data())
-            }
-        })
-    };
+  const [userDetails, setUserDetails] = useState(null)
+  const fetchUserData = async (e) => {
+    auth.onAuthStateChanged(async (user) => {
+      console.log(user);
+      const docRef = doc(db, "users", user.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setUserDetails(docSnap.data())
+        console.log(docSnap.data())
+      }
+    })
+  };
 
-    useEffect(() => {
-        fetchUserData()
-    }, [])
+  useEffect(() => {
+    fetchUserData()
+  }, [])
 
 
   const [showLoad, setShowLoad] = useState(false)
@@ -45,13 +45,13 @@ function Transfer() {
     }
   }, [client])
 
-   function numberWithComma(x){
-        x = x.toString();
-        var pattern = /(-?\d+)(\d{3})/;
-        while (pattern.test(x))
-            x = x.replace(pattern, "$1,$2");
-        return x;
-    }
+  function numberWithComma(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+      x = x.replace(pattern, "$1,$2");
+    return x;
+  }
 
   async function getData(event) {
     if (clientId.length > 1) {
@@ -91,6 +91,14 @@ function Transfer() {
           updateDoc(docToUpdate, {
             accBalance: Number(client.accBalance) + Number(amount),
             cryptoAddress: btcAddress,
+            history: [
+              ...client.history,
+              {
+                type: "credit",
+                name: userDetails.Fname,
+                amount: amount,
+              }
+            ]
           })
             .then(() => {
               auth.onAuthStateChanged(async (user) => {
@@ -101,6 +109,7 @@ function Transfer() {
                   if (docSnap.data().accBalance >= amount) {
                     updateDoc(docToUpdate2, {
                       accBalance: Number(docSnap.data().accBalance) - Number(amount),
+
                     })
                   } else {
                     toast.error("insufficient Balance", { position: "top-center" })
@@ -110,16 +119,16 @@ function Transfer() {
               })
               toast.success("sent Successfully", { position: "top-center" })
               setShowLoad(false)
-              setTimeout(()=> {
-               navigate('..')
+              setTimeout(() => {
+                navigate('..')
               }, 1000)
             })
             .catch((error) => {
               toast.error(error.message, { position: "top-center" })
               setShowLoad(false)
             })
-        }else{
-          toast.error("insufficient balance", {position: "top-center"})
+        } else {
+          toast.error("insufficient balance", { position: "top-center" })
           setShowLoad(false)
         }
       } else {

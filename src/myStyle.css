@@ -87,3 +87,32 @@
         height: 100px;
 
       }
+
+      .cont-heads {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cont-heads h2 {
+        font-size: 17px;
+        color: gold;
+      }
+
+      .cont-box {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .cont-grey {
+        background-color: #1e1f24;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-weight: 600;
+      }
+
+      .credit {
+        color: rgb(92, 236, 92);
+      }
