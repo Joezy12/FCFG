@@ -90,6 +90,11 @@ const banks = [
         BankName: "Columbia State Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qE_AmscNJufknMk__aZHmgLLHGdQ6vNelw&s",
     },
+    {
+     id: 72,
+        BankName: "Cross River Bank",
+        img: "",
+    },
      {
         id: 17,
         BankName: "Centennial Bank",
