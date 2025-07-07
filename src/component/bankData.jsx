@@ -91,7 +91,7 @@ const banks = [
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qE_AmscNJufknMk__aZHmgLLHGdQ6vNelw&s",
     },
     {
-     id: 72,
+     id: 74,
         BankName: "Cross River Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceKfR7ChpR7yyRjVE8sjxwYtpoGtHSqtju4SDBNPoC5zgB0i04QSfzRHH&s=10",
     },
