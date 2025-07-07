@@ -90,11 +90,6 @@ const banks = [
         BankName: "Columbia State Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qE_AmscNJufknMk__aZHmgLLHGdQ6vNelw&s",
     },
-    {
-     id: 74,
-        BankName: "Cross River Bank",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceKfR7ChpR7yyRjVE8sjxwYtpoGtHSqtju4SDBNPoC5zgB0i04QSfzRHH&s=10",
-    },
      {
         id: 17,
         BankName: "Centennial Bank",
@@ -379,16 +374,15 @@ const banks = [
         img: "https://web.waterburychamber.com/external/wcpages/wcwebcontent/webcontentpage.aspx?contentid=2861",
     },
        {
-        id:70,
-        BankName: "WesBanco Bank",
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsCayRVwdfKKdDeHiL_x9iyg7E_BptoL45wg&s",
-    },
-       {
         id: 71,
         BankName: "Zions Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFcO9ChtUykrlQOfJwQHHUEKp-PZawa2XLg&s",
     },
-    
+     {
+     id: 72,
+        BankName: "Cross River Bank",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceKfR7ChpR7yyRjVE8sjxwYtpoGtHSqtju4SDBNPoC5zgB0i04QSfzRHH&s=10",
+    },
 ]
 
 export default banks;
