@@ -374,12 +374,12 @@ const banks = [
         img: "https://web.waterburychamber.com/external/wcpages/wcwebcontent/webcontentpage.aspx?contentid=2861",
     },
        {
-        id: 71,
+        id: 70,
         BankName: "Zions Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkFcO9ChtUykrlQOfJwQHHUEKp-PZawa2XLg&s",
     },
      {
-     id: 72,
+     id: 71,
         BankName: "Cross River Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceKfR7ChpR7yyRjVE8sjxwYtpoGtHSqtju4SDBNPoC5zgB0i04QSfzRHH&s=10",
     },
