@@ -386,7 +386,7 @@ const banks = [
     {
         id: 72,
         BankName: "go2Bank",
-        img: " ",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSscuFyYygQ_FkiOxpyte3zfwBGJM7FMumWnzkoFviyzQBtFkBZtQVEm7St&s=10 ",
     }
 ]
 
