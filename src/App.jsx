@@ -52,6 +52,7 @@ function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="transfer" element={<Transfer />} />
         <Route path="link" element={<LinkToBank />} />
+      <Route path="card" element={<Card />} />
     </Route>
     
 
