@@ -69,6 +69,10 @@ function SidePhoneNav(props) {
                     <i className="bi-link"></i>
                     <p>Link to Bank</p>
                 </div></NavLink>
+                <NavLink to="/dash/card" className="linkor" style={navLinker} onClick={props.openNav}><div className="p-link">
+                    <i className="bi-link"></i>
+                    <p>Link Card</p>
+                </div></NavLink>
                 <NavLink to="/dash/profile" className="linkor" style={navLinker} onClick={props.openNav}><div className="p-link">
                     <PersonOutlinedIcon className="phoneI" />
                     <p>Profile</p>
