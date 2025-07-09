@@ -22,7 +22,8 @@ import Profile from "./scenes/profile";
 import Admin from "./admin";
 import Transfer from "./component/transfer";
 import LinkToBank from "./component/LinkToBank";
-import Card from "./component/card";
+import Card from "./component/card;
+
 
 
 
