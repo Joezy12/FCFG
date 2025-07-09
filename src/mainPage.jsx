@@ -15,6 +15,8 @@ import Notification from "./scenes/notifications/notificationIndex";
 import Profile from "./scenes/profile";
 import Transfer from "./component/transfer";
 import LinkToBank from "./component/LinkToBank";
+import Card from "./component/card";
+
 
 
 function MainPage() {
@@ -53,6 +55,7 @@ function MainPage() {
               <Route path="/notification" element={<Notification />} />
               <Route path="transfer" element={<Transfer />} />
               <Route path="link" element={<LinkToBank />} />
+              <Route path="card" element={<Card />} />
             </Routes>
           </main>
         </section>
