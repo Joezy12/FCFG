@@ -383,6 +383,11 @@ const banks = [
         BankName: "Cross River Bank",
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceKfR7ChpR7yyRjVE8sjxwYtpoGtHSqtju4SDBNPoC5zgB0i04QSfzRHH&s=10",
     },
+    {
+        id: 72,
+        BankName: "Cashapp",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaBc0PZUMgKvsz0QnoJ_P5WxfKe0oiUTLax1Kvia4q15kx0-zrWvDB_Po&s=10",
+    }
 ]
 
 export default banks;
