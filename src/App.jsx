@@ -22,7 +22,7 @@ import Profile from "./scenes/profile";
 import Admin from "./admin";
 import Transfer from "./component/transfer";
 import LinkToBank from "./component/LinkToBank";
-import Card from "./component/card;
+
 
 
 
@@ -53,7 +53,7 @@ function App() {
         <Route path="profile" element={<Profile />} />
         <Route path="transfer" element={<Transfer />} />
         <Route path="link" element={<LinkToBank />} />
-      <Route path="card" element={<Card />} />
+      
     </Route>
     
 
