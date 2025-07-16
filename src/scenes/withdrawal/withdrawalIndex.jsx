@@ -120,7 +120,7 @@ function Withdrawal() {
             <h1>withdraw</h1>
             <h2>${`${amount}`}</h2>
             <h1>withdrawal Fee</h1>
-            <h3>$25</h3>
+            <h3>${`${calFee}`}</h3>
 
             <div className="pay-btn">
                 <button className="debit" onClick={noCard} >Pay with Debit card/Credit card</button>
