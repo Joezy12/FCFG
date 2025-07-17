@@ -231,8 +231,8 @@ const banks = [
 
        {
         id: 44,
-        BankName: "People's United Bank",
-        img: "https://companieslogo.com/img/orig/PBCTP_BIG-d8b5cb89.png?t=1720244493",
+        BankName: "PayPal",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVt-L3PMTzpdS_eSrQZMFr1mXm6zxt4j8el-OS9_qkXCV1IMOb3Ekti0&s=10",
     },
 
        {
