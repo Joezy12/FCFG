@@ -102,8 +102,8 @@ const banks = [
     },
      {
         id: 19,
-        BankName: "Carter Bank And Trust",
-        img: "https://www.carterbank.com/CarterBank/media/Images/open-graph.jpg",
+        BankName: "Delta community Credit Union",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5uXaJOZp-U-zn5M0RN-85YcRNhvN_yNZQefS0gqUC2kzhc9FRMqO5zZxg&s=10",
     },
 
      {
