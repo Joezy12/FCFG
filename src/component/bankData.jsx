@@ -344,8 +344,8 @@ const banks = [
     },
      {
         id: 64,
-        BankName: "Valley National Bank",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Valley_National_Bank_logo.svg/2560px-Valley_National_Bank_logo.svg.png",
+        BankName: "Venmo",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVxlWc1Ds2FewFrFytKHGuW91EReKD5I4TKw&usqp=CAU",
     },
 
        {
